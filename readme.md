@@ -1,4 +1,7 @@
 # Python Cached Decorator 
+
+![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 ### Provides caching for functions
 * Suitable for time consuming computations
 * How does it work:
