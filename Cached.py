@@ -37,7 +37,7 @@ class Cached(object):
         @_rename(self.name)
         def wrapped_f(*args, **kwargs):
             self.name_params = self.name + "_" + str(
-                hash(str(args) + "|" + str(kwargs)))
+                hash(str(args) + "|" + str(sorted(kwargs.items()))))
 
             if not self.force_run:
                 return_value = self.__load()
