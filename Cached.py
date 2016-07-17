@@ -26,6 +26,7 @@ class Cached(object):
         self.force_run = force_run
         self.output_path = output_path
         self.name = name
+        self.name_params = None
 
     def __call__(self, f):
         if not os.path.isdir(self.output_path):
@@ -39,6 +40,7 @@ class Cached(object):
             self.name_params = self.name + "_" + str(
                 hash(str(args) + "|" + str(sorted(kwargs.items()))))
 
+            return_value = None
             if not self.force_run:
                 return_value = self.__load()
 
