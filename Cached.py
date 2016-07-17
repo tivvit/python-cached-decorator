@@ -77,9 +77,9 @@ class Cached(object):
                     newest_file.replace(".pkl", "").split("_")[-1])
                 created = datetime.fromtimestamp(create_time).strftime(
                     "%d.%m.%Y %H:%M:%S")
-                print "loading %s (created %s)" % (newest_file, created)
+                print("loading {:s} (created {:s})".format(
+                    newest_file, created))
                 return pickle.load(out)
         else:
-            print "%s_*.pkl not found (maybe different args). RUNNING" % os.path.join(
-                self.output_path,
-                self.name_params)
+            print("{:s}_*.pkl not found (maybe different args). RUNNING".format(
+                os.path.join(self.output_path, self.name_params)))
