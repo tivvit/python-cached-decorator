@@ -1,3 +1,10 @@
+"""
+Cached decorator using pickle
+
+todo:
+    * tests
+    * docstrings
+"""
 import time
 import pickle
 import os
